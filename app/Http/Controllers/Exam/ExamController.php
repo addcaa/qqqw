@@ -80,13 +80,13 @@ class ExamController extends Controller
         $arr=[
             'arr'=>$js_arr
         ];
-        $url=" http://api.k780.com/?app=weather.future&weaid=1&&appkey=42883&sign=d5d442af1237b3454a7b9e81474f3325&format=json";
+        $url=" http://api.k780.com/?app=weather.future&weaid=$js_arr&&appkey=42883&sign=d5d442af1237b3454a7b9e81474f3325&format=json";
         $ch = curl_init();//初始化curl
         curl_setopt($ch, CURLOPT_URL,$url);//抓取指定网页
         curl_setopt($ch, CURLOPT_HEADER, 0);//设置header
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);//要求结果为字符串且输出到屏幕上
         curl_setopt($ch, CURLOPT_POST, 1);    //post提交方式
-        curl_setopt($ch, CURLOPT_POSTFIELDS,$arr);
+//        curl_setopt($ch, CURLOPT_POSTFIELDS,$arr);
         $data = curl_exec($ch);//运行curl
         curl_close($ch);
 //        $content=file_get_contents("php://input");
