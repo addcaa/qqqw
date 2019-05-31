@@ -15,7 +15,7 @@ Route::post('eaddo','Exam\ExamController@eaddo');
 //weather
 Route::get('weather','Exam\ExamController@weather');
 Route::post('weathero','Exam\ExamController@weathero');
-Route::get('weathere','Exam\ExamController@weathere');
+Route::post('weathere','Exam\ExamController@weathere');
 
 Route::post('aa','Exam\ExamController@aa');
 
