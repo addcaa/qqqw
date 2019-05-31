@@ -89,9 +89,9 @@ class ExamController extends Controller
         curl_setopt($ch, CURLOPT_POSTFIELDS,$arr);
         $data = curl_exec($ch);//运行curl
         curl_close($ch);
-        $content=file_get_contents("php://input");
+//        $content=file_get_contents("php://input");
         $time=date('Y-m-d H:i:s');
-        $str=$time.$content."\n";
+        $str=$time.$data."\n";
         file_put_contents("logs/weather.log",$str,FILE_APPEND);
         print_r($data);
     }
