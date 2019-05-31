@@ -76,18 +76,14 @@ class ExamController extends Controller
         $password="cuifang";
         $iv='1123123232323432';
         $arr=openssl_decrypt($ba, $method, $password,OPENSSL_RAW_DATA,$iv);
-        $js_arr=json_decode($arr,true);
-        $arr=[
-            'arr'=>$js_arr
-        ];
-        $url="http://api.k780.com/?app=weather.future&weaid=$js_arr&&appkey=42883&sign=d5d442af1237b3454a7b9e81474f3325&format=json";
-        $ch = curl_init();//初始化curl
-        curl_setopt($ch, CURLOPT_URL,$url);//抓取指定网页
-        curl_setopt($ch, CURLOPT_HEADER, 0);//设置header
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);//要求结果为字符串且输出到屏幕上
-        curl_setopt($ch, CURLOPT_POST, 1);    //post提交方式
-//        curl_setopt($ch, CURLOPT_POSTFIELDS,$arr);
-        $data = curl_exec($ch);//运行curl
+        $city=json_decode($arr,true);
+
+//        $url="http://api.k780.com/?app=weather.future&weaid=$js_arr&&appkey=42883&sign=d5d442af1237b3454a7b9e81474f3325&format=json";
+        $url="https://free-api.heweather.net/s6/weather/now?key=HE1904161049361666&location=$city";
+        $ch= curl_init();
+        curl_setopt($ch,CURLOPT_URL,$url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $data = curl_exec($ch);
         curl_close($ch);
 //        $content=file_get_contents("php://input");
         $time=date('Y-m-d H:i:s');

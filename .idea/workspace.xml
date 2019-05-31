@@ -35,8 +35,8 @@
       <file leaf-file-name="ExamController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Exam/ExamController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.281198">
-              <caret line="86" column="63" selection-start-line="86" selection-start-column="63" selection-end-line="86" selection-end-column="63" />
+            <state vertical-scroll-proportion="0.40099832">
+              <caret line="83" column="27" selection-start-line="83" selection-start-column="27" selection-end-line="83" selection-end-column="27" />
               <folding>
                 <element signature="e#45#73#0#PHP" expanded="true" />
                 <element signature="e#240#303#0#PHP" expanded="false" />
@@ -847,8 +847,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Exam/ExamController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.281198">
-          <caret line="86" column="63" selection-start-line="86" selection-start-column="63" selection-end-line="86" selection-end-column="63" />
+        <state vertical-scroll-proportion="0.40099832">
+          <caret line="83" column="27" selection-start-line="83" selection-start-column="27" selection-end-line="83" selection-end-column="27" />
           <folding>
             <element signature="e#45#73#0#PHP" expanded="true" />
             <element signature="e#240#303#0#PHP" expanded="false" />
