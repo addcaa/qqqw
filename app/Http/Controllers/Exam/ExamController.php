@@ -88,12 +88,12 @@ class ExamController extends Controller
         $time=date('Y-m-d H:i:s');
         $str=$time.$data."\n";
         file_put_contents("logs/weather.log",$str,FILE_APPEND);
-//        print_r($data);
+        print_r($data);
         //标签对称加密
-        $arr=base64_decode($data);
-        $k=openssl_get_publickey('file://'.storage_path('app/key/public.pem'));
-        openssl_public_decrypt($arr,$barr,$k);
-        return $barr;
+//        $arr=base64_decode($data);
+//        $k=openssl_get_publickey('file://'.storage_path('app/key/public.pem'));
+//        openssl_public_decrypt($arr,$barr,$k);
+//        return $barr;
     }
 
 }
