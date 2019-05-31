@@ -51,7 +51,9 @@ class ExamController extends Controller
         $iv='1123123232323432';
         $on_arr=openssl_encrypt($js_arr,$method,$password,OPENSSL_RAW_DATA,$iv);
         $ba=base64_encode($on_arr);
-        $url="http://on.shont.com/weathere";
+        $htm=env('htm');
+        $url="$htm/weathere";
+        dd($url);
         //初使化init方法
         $ch=curl_init();
         //指定URL
@@ -79,11 +81,11 @@ class ExamController extends Controller
         $arr=[
             'arr'=>$js_arr
         ];
-        $content=file_get_contents("php://input");
-        $time=date('Y-m-d H:i:s');
-        $str=$time.$content."\n";
-        file_put_contents("logs/wx_event.log",$str,FILE_APPEND);
-        $data=simplexml_load_string($content);
+//        $content=file_get_contents("php://input");
+//        $time=date('Y-m-d H:i:s');
+//        $str=$time.$content."\n";
+//        file_put_contents("logs/wx_event.log",$str,FILE_APPEND);
+//        $data=simplexml_load_string($content);
 
 
         $url=" http://api.k780.com/?app=weather.future&weaid=1&&appkey=42883&sign=d5d442af1237b3454a7b9e81474f3325&format=json";
