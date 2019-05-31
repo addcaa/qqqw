@@ -77,9 +77,11 @@ class ExamController extends Controller
         $iv='1123123232323432';
         $arr=openssl_decrypt($ba, $method, $password,OPENSSL_RAW_DATA,$iv);
         $city=json_decode($arr,true);
-
-//        $url="http://api.k780.com/?app=weather.future&weaid=$js_arr&&appkey=42883&sign=d5d442af1237b3454a7b9e81474f3325&format=json";
-        $url="https://free-api.heweather.net/s6/weather/now?key=HE1904161049361666&location=$city";
+        
+//        $url="http://api.k780.com/?app=weather.future&weaid=42883&&appkey=42883&sign=d5d442af1237b3454a7b9e81474f3325&format=json";
+        $url="http://api.k780.com/?app=weather.today&weaid=$city&&appkey=10003&sign=b59bc3ef6191eb9f747dd4e83c99f2a4&format=json";
+//
+//        $url="https://free-api.heweather.net/s6/weather/now?key=HE1904161049361666&location=$city";
         $ch= curl_init();
         curl_setopt($ch,CURLOPT_URL,$url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
