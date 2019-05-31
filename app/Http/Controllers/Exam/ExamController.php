@@ -53,7 +53,6 @@ class ExamController extends Controller
         $ba=base64_encode($on_arr);
         $htm=env('htm');
         $url="$htm/weathere";
-        dd($url);
         //初使化init方法
         $ch=curl_init();
         //指定URL
@@ -81,13 +80,6 @@ class ExamController extends Controller
         $arr=[
             'arr'=>$js_arr
         ];
-//        $content=file_get_contents("php://input");
-//        $time=date('Y-m-d H:i:s');
-//        $str=$time.$content."\n";
-//        file_put_contents("logs/wx_event.log",$str,FILE_APPEND);
-//        $data=simplexml_load_string($content);
-
-
         $url=" http://api.k780.com/?app=weather.future&weaid=1&&appkey=42883&sign=d5d442af1237b3454a7b9e81474f3325&format=json";
         $ch = curl_init();//初始化curl
         curl_setopt($ch, CURLOPT_URL,$url);//抓取指定网页
@@ -97,6 +89,10 @@ class ExamController extends Controller
         curl_setopt($ch, CURLOPT_POSTFIELDS,$arr);
         $data = curl_exec($ch);//运行curl
         curl_close($ch);
+        $content=file_get_contents("php://input");
+        $time=date('Y-m-d H:i:s');
+        $str=$time.$content."\n";
+        file_put_contents("logs/weather.log",$str,FILE_APPEND);
         print_r($data);
     }
 }
